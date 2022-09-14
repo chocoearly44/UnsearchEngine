@@ -1,0 +1,8 @@
+<div class="input-group rounded">
+	<input #unsearchQuery (keyup.enter)="search(unsearchQuery.value)" [defaultValue]="query" aria-describedby="search-addon"
+		   aria-label="Unsearch" class="form-control rounded" placeholder="Unsearch" type="search" />
+
+	<button (click)="search(unsearchQuery.value)" class="btn btn-primary" type="button">
+		<bi name="search" style="width: 20px"></bi>
+	</button>
+</div>

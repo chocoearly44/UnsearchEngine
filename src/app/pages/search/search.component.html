@@ -1,0 +1,19 @@
+<div class="container-fluid d-flex p-4 align-items-center">
+	<a routerLink="">
+		<img src="assets/icon.svg" width="60px">
+	</a>
+
+	<app-query [query]="query" class="w-100 p-4"></app-query>
+</div>
+
+<hr>
+
+<div *ngIf="isLoaded" class="container-fluid">
+	<ng-container *ngIf="results.length > 0; else elseBlock">
+		<app-result *ngFor="let result of results" [description]="result.description" [link]="result.link" [title]="result.title"></app-result>
+	</ng-container>
+
+	<ng-template #elseBlock>
+		<app-notfound></app-notfound>
+	</ng-template>
+</div>
